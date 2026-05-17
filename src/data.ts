@@ -101,7 +101,7 @@ export const buildings: Building[] = [
     address: "长宁区番禺路129号",
     image_url: "/邬达克自宅.jpg",
     restoration_url: "/邬达克内部.jpg", // 填入修复后的图片链接
-    structure_url: "/邬达克自宅.jpg",
+    structure_url: "/邬达克结构.jpg",
     description: "邬达克第二处自宅，典型英国乡村风格：露明木结构、陡峭红瓦坡顶、老虎窗、高烟囱。南面有大花园，三个子女在此度过童年。原为普益地产项目，邬达克购下已建部分结构，重点设计立面、室内和细部。因越界筑路区域市政管道问题，花园雨水倒灌，六年交涉未果，1936年转卖给德国外交官，全家搬到达华公寓。1964年后归长宁区教育局，花园上建旅游职校。现正改造，底层将建成邬达克纪念馆。改造后外观和底层将对公众开放。",
     x: 42.0,
     y: 47.0,
@@ -126,7 +126,6 @@ export const buildings: Building[] = [
         { shape: 'box', position: [0.2, 2.1, 0.4], scale: [2.8, 0.1, 2], rotation: [0.6, 0, 0], color: '#9e3a1d', stage: 3 }, // Roof slope 1 (Main)
         { shape: 'box', position: [0.2, 2.1, -0.4], scale: [2.8, 0.1, 2], rotation: [-0.6, 0, 0], color: '#9e3a1d', stage: 3 }, // Roof slope 2 (Main)
         { shape: 'box', position: [1.2, 1.1, 0.5], scale: [1, 0.1, 1.2], rotation: [0.4, 0.78, 0], color: '#9e3a1d', stage: 3 }, // Small gable roof
-        { shape: 'box', position: [0, 1.8, 0], scale: [0.1, 0.1, 0.1], color: '#000000', stage: 3 } // Weather vane placeholder
       ]
     }
   },
@@ -208,7 +207,6 @@ export const buildings: Building[] = [
         // Stage 3: Architectural Details
         { shape: 'box', position: [0.7, 2.8, -1.0], scale: [0.15, 0.4, 0.15], color: '#8d2d1b', stage: 3 },
         { shape: 'box', position: [-0.7, 2.8, -1.0], scale: [0.15, 0.4, 0.15], color: '#8d2d1b', stage: 3 },
-        { shape: 'box', position: [0, 3.1, 1.3], scale: [0.03, 0.8, 0.03], color: '#1a1a1a', stage: 3 } // Flagpole
       ]
     }
   },

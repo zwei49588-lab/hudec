@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence } from 'framer-motion';
 import { CityView } from './components/CityView.tsx';
 import { DistrictView } from './components/DistrictView.tsx';
 

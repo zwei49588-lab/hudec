@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Hammer, Ruler, Palette, Home } from 'lucide-react';
 import { Construction3D } from './Construction3D.tsx';
 import { Building } from '../data.ts';

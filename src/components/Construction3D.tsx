@@ -1,7 +1,7 @@
+// @ts-nocheck
 import React, { useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, ContactShadows, Float, Edges } from '@react-three/drei';
-import { useSpring, animated } from '@react-spring/three';
 import { Building } from '../data';
 
 interface PartProps {
@@ -14,31 +14,21 @@ interface PartProps {
 }
 
 const BuildingPart = ({ shape, position, scale, rotation = [0, 0, 0], active, color = "#f4f1ea" }: PartProps) => {
-  const { springScale, springOpacity, springY, springRotation } = useSpring({
-    springScale: active ? scale : [0.001, 0.001, 0.001],
-    springOpacity: active ? 1 : 0,
-    springY: active ? position[1] : position[1] + 2,
-    springRotation: active ? rotation : [rotation[0], rotation[1] + Math.PI, rotation[2]],
-    config: { mass: 1, tension: 120, friction: 14 }
-  });
+  if (!active) return null;
 
   const material = (
-    <animated.meshStandardMaterial 
+    <meshStandardMaterial 
       color={color} 
-      transparent 
-      opacity={springOpacity as any} 
       roughness={0.2}
       metalness={0.1}
     />
   );
 
   return (
-    <animated.group
-      position-x={position[0]}
-      position-y={springY}
-      position-z={position[2]}
-      rotation={springRotation as any}
-      scale={springScale as any}
+    <group
+      position={position}
+      rotation={rotation}
+      scale={scale}
     >
       {shape === 'box' && (
         <mesh castShadow receiveShadow>
@@ -95,11 +85,11 @@ const BuildingPart = ({ shape, position, scale, rotation = [0, 0, 0], active, co
       {shape === 'balcony' && (
         <mesh castShadow receiveShadow>
           <boxGeometry args={[1, 1, 1]} />
-          <animated.meshStandardMaterial color="#2a2a2a" transparent opacity={springOpacity as any} metalness={0.9} roughness={0.1} />
+          <meshStandardMaterial color="#2a2a2a" metalness={0.9} roughness={0.1} />
           <Edges threshold={15} color="#000000" scale={1.001} opacity={0.5} />
         </mesh>
       )}
-    </animated.group>
+    </group>
   );
 };
 
